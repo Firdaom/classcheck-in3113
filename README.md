@@ -382,21 +382,6 @@ flutter devices
 - [ ] Admin dashboard for instructors
 - [ ] Class statistics and trends
 
-## Contributing Guidelines
-
-This is an individual exam project. External contributions are not accepted.
-
-## License
-
-Educational use only.
-
-## Support & Contact
-
-For technical issues or questions, please contact:
-- **Instructor**: [Contact Information]
-- **Course**: Mobile Application Development (1305216)
-
----
 
 **Last Updated**: March 13, 2026  
 **Flutter Version**: 3.38.9  
