@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/attendance_session.dart';
 import '../services/attendance_store.dart';
@@ -16,11 +17,21 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   late String _selectedClassId;
+  String _studentId = '';
 
   @override
   void initState() {
     super.initState();
     _selectedClassId = _courses.first.id;
+    _loadStudentId();
+  }
+
+  Future<void> _loadStudentId() async {
+    final prefs = await SharedPreferences.getInstance();
+    final studentId = prefs.getString('attendance_student_id') ?? 'STU-240031';
+    setState(() {
+      _studentId = studentId;
+    });
   }
 
   String get _greeting {
@@ -33,8 +44,6 @@ class _HomeScreenState extends State<HomeScreen> {
       return 'Good Evening';
     }
   }
-
-  String get _studentId => AttendanceStore.studentId;
 
   CourseOption get _selectedCourse =>
       _courses.firstWhere((course) => course.id == _selectedClassId);
