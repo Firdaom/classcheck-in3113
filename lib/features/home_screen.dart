@@ -216,11 +216,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text('Recent sessions', style: Theme.of(context).textTheme.titleLarge),
-                          const SizedBox(height: 6),
-                          Text(
-                            'Local history for quick instructor review during the lab test.',
-                            style: Theme.of(context).textTheme.bodyMedium,
-                          ),
                           const SizedBox(height: 16),
                           if (widget.store.sessions.isEmpty)
                             Container(

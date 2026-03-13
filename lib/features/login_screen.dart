@@ -85,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString('user_email', _emailController.text);
       await prefs.setString('user_password', _passwordController.text);
-      await prefs.setString('student_id', _studentIdController.text);
+      await prefs.setString('attendance_student_id', _studentIdController.text);
       
       // Save student ID to AttendanceStore
       await prefs.setString('attendance_student_id', _studentIdController.text);
